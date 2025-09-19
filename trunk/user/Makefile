@@ -134,6 +134,7 @@ dir_y						+= scripts
 dir_$(CONFIG_FIRMWARE_INCLUDE_SMARTDNS)	+= smartdns
 dir_$(OPENSSH_ENABLED)				+= openssh
 dir_$(DROPBEAR_ENABLED)				+= dropbear
+dir_$(CONFIG_FIRMWARE_INCLUDE_XRAY)	+= xray
 dir_$(CONFIG_FIRMWARE_INCLUDE_HTOP)		+= htop
 dir_$(CONFIG_FIRMWARE_INCLUDE_NANO)		+= nano
 dir_$(CONFIG_FIRMWARE_INCLUDE_OPENVPN)		+= openvpn

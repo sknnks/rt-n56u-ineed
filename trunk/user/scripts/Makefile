@@ -9,7 +9,7 @@ romfs:
 	$(ROMFSINST) /sbin/reset_ss.sh
 	$(ROMFSINST) /sbin/mtd_storage.sh
 	$(ROMFSINST) -p -x ./cacert.pem /usr/lib/cacert.pem
-	-xzf ./xray-linux-mipsle.tar.gz -C $(INSTALLDIR)/usr/sbin/
+	tar -xzf ./xray-linux-mipsle.tar.gz -C $(INSTALLDIR)/usr/sbin/
 ifeq ($(STORAGE_ENABLED),y)
 	$(ROMFSINST) /sbin/automount.sh
 endif

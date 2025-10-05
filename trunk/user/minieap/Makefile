@@ -17,8 +17,10 @@ extract_test:
 	fi )
 
 romfs:
+ifeq ($(CONFIG_FIRMWARE_INCLUDE_MINIEAP),y)
 	$(ROMFSINST) -p +x $(THISDIR)/$(SRC_NAME)/minieap /usr/bin/minieap
 	$(ROMFSINST) $(THISDIR)/$(SRC_NAME)/minieap.conf /etc_ro/minieap.conf
+endif
 
 clean:
 	if [ -f $(SRC_NAME)/Makefile ] ; then \

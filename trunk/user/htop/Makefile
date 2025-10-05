@@ -39,4 +39,6 @@ clean:
 	rm -f config_done
 
 romfs:
+ifeq ($(CONFIG_FIRMWARE_INCLUDE_HTOP),y)
 	$(ROMFSINST) -p +x $(THISDIR)/$(SRC_NAME)/htop /usr/bin/htop
+endif

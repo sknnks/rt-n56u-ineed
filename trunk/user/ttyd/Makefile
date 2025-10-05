@@ -35,5 +35,7 @@ clean:
 	rm -f config_done
 
 romfs:
+ifeq ($(CONFIG_FIRMWARE_INCLUDE_TTYD),y)
 	$(ROMFSINST) $(THISDIR)/$(SRC_NAME)/build/ttyd /usr/bin/ttyd
 	$(ROMFSINST) $(THISDIR)/ttyd.sh /usr/bin/ttyd.sh
+endif

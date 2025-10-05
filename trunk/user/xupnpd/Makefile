@@ -7,6 +7,7 @@ clean:
 	make -C $(SRC_NAME) clean
 
 romfs:
+ifeq ($(CONFIG_FIRMWARE_INCLUDE_XUPNPD),y)
 	mkdir -p $(ROMFSDIR)/etc_ro/xupnpd
 	mkdir -p $(ROMFSDIR)/usr/share/xupnpd
 	$(ROMFSINST) $(SRC_NAME)/xupnpd /usr/bin/xupnpd
@@ -15,3 +16,4 @@ romfs:
 	cp -rf $(SRC_NAME)/www $(ROMFSDIR)/usr/share/xupnpd
 	cp -rf $(SRC_NAME)/profiles $(ROMFSDIR)/etc_ro/xupnpd
 	cp -rf $(SRC_NAME)/plugins $(ROMFSDIR)/etc_ro/xupnpd
+endif

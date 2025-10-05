@@ -51,7 +51,8 @@ clean:
 	rm -rf $(SRC_NAME)
 
 romfs:
+ifeq ($(CONFIG_FIRMWARE_INCLUDE_TCPDUMP),y)
 	cp $(SRC_NAME)/tcpdump .
 	$(STRIP) tcpdump
 	$(ROMFSINST) /usr/sbin/tcpdump
-
+endif

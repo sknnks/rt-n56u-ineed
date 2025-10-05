@@ -41,4 +41,6 @@ clean:
 	rm -f config_done
 
 romfs:
+ifeq ($(CONFIG_FIRMWARE_INCLUDE_NANO),y)
 	$(ROMFSINST) -p +x $(THISDIR)/$(SRC_NAME)/src/nano /usr/bin/nano
+endif

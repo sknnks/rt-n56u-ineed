@@ -41,5 +41,6 @@ clean:
 	rm -f config_done
 
 romfs:
+ifeq ($(CONFIG_FIRMWARE_INCLUDE_IPERF3),y)
 	$(ROMFSINST) -p +x $(THISDIR)/$(SRC_NAME)/src/iperf3 /usr/bin/iperf3
-
+endif
